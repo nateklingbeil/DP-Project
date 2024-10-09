@@ -1,8 +1,5 @@
-# Ignore Python compiled files
 *.pyc
 __pycache__/
-
-# Ignore environment and system files
 *.env
 *.sqlite3
 db.sqlite3
@@ -11,10 +8,6 @@ venv/
 .vscode/
 .idea/
 .DS_Store
-
-# Ignore Django migrations
 */migrations/
-
-# Ignore static and media files
 /static/
 media/
