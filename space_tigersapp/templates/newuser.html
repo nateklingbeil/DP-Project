@@ -4,19 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <title>Sign Up</title>
-</head>
-<style>
-            h2, nav {
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(120deg, #1f1c2c, #928DAB);
+            color: #fff;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
-</style>
+
+        header {
+            margin-top: 30px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #f4e04d;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav a {
+            color: #f4e04d;
+            text-decoration: none;
+            border: 2px solid #f4e04d;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #f4e04d;
+            color: #1f1c2c;
+        }
+
+        section {
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        article h3 {
+            font-size: 1.8em;
+            color: #f4e04d;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 60%;
+        }
+
+        fieldset {
+            border: 2px solid #f4e04d;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            color: #f4e04d;
+            font-size: 1.5em;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #f4e04d;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="submit"]  {
+            width: 40%;
+            padding: 10px;
+            border-radius: 5px;
+            border: yellow;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #f4e04d;
+            color: #1f1c2c;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #fff;
+            color: #1f1c2c;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #f4e04d;
+            margin-bottom: 50;
+        }
+    </style>
+</head>
+
 <body>
     <header>
         <h2>Sign up to Space Tigers</h2>
         <nav>
-            <!-- Link to home page -->
             <a href="{% url 'index' %}">Back to Home</a>
         </nav>
     </header>
@@ -24,8 +130,7 @@
     <section>
         <article>
             <h3>Personal Information</h3>
-            <p>Please fill out the form below to sign up for an account. All fields are required.
-            </p>
+            <p>Please fill out the form below to sign up for an account. All fields are required.</p>
         </article>
 
         <form method="post">
@@ -42,8 +147,6 @@
                 <label for="lname">Last name:</label><br>{{ form.last_name }}<br><br>
             </fieldset>
 
-            <br>
-
             <fieldset>
                 <legend>Contact Information</legend>
                 <!-- Email -->
@@ -53,24 +156,17 @@
                 <label for="phone">Phone:</label><br>{{ form.phone }}<br><br>
             </fieldset>
 
-            <br>
-
             <fieldset>
                 <legend>Profile</legend>
                 <!-- Avatar URL -->
                 <label for="avatar_url">Avatar URL:</label><br>{{ form.avatar_url }}<br><br>
             </fieldset>
 
-            <br>
-            <!-- Submit form -->
             <input type="submit" value="Submit">
         </form>
-
     </section>
 
-    <footer>
-        <footer>© Team 1 - Nick, John, Alex, and Nate</footer>
-    </footer>
+    <footer>© Team 1 - Nick, John, Alex, and Nate</footer>
 </body>
 
 </html>

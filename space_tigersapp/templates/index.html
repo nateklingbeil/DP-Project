@@ -5,39 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-    <title>Space Tigers</title>
-    <style>
-        body {
-            text-align: center;
-        }
+<title>Space Tigers</title>
+<style>
+    /* General body styling */
+    body {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(120deg, #1f1c2c, #928DAB);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+    h2 {
+        font-size: 2.5em;
+        margin-top: 30px;
+        color: #f4e04d;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
 
-        li {
-            margin: 20px;
-            padding: 15px;
-            border-radius: 15px;
-            max-width: 250px;
-        }
+    a {
+        color: #f4e04d;
+        text-decoration: none;
+        padding: 10px 15px;
+        border: 2px solid #f4e04d;
+        border-radius: 25px;
+        margin: 10px;
+        transition: all 0.3s ease;
+    }
 
-        img {
-            width: 100%;
-        }
-    </style>
+    a:hover {
+        background-color: #f4e04d;
+        color: #1f1c2c;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    li {
+        margin: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 250px;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    li:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-top: 10px;
+        color: #f4e04d;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+        margin-top: 50px;
+        font-size: 0.9em;
+        color: #f4e04d;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+</style>
 </head>
 
 <body>
     <h2>Shop Space Tiger Products</h2>
     <a href="{% url 'new_user' %}">Sign up</a>
     <a href="{% url 'user_table' %}">User List</a>
+    <a href="{% url 'admin:index' %}">Admin</a>
     <ul>
         {% for product in products %}
         <li>
@@ -48,4 +101,5 @@
     </ul>
 </body>
 <footer>© Team 1 - Nick, John, Alex, and Nate</footer>
+
 </html>

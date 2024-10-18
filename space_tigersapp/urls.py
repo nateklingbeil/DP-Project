@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.urls import path
 from . import views
 
@@ -6,5 +7,6 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('new/', views.new_user, name='new_user'), 
-    path('users/', views.user_table, name='user_table')
+    path('users/', views.user_table, name='user_table'),
+    path('admin/', admin.site.urls)
 ]
